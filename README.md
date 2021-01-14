@@ -10,6 +10,8 @@ Developed by [github.com/tejado](https://github.com/tejado).
 ## How does it work?
 Every 25 seconds all nearby users will be received with [TDLib](https://core.telegram.org/tdlib) from Telegram. This includes the distance of every nearby user to "my" location. With three distances from three different points, it is possible to calculate the position of the nearby user.
 
+This only works if the users have activated the nearby feature inside Telegram. Per default it is deactivated.
+
 ## Installation
 
 Requirements: node.js and an Telegram account
