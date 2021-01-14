@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Telegram Nearby Map - by github.com/tejado</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://unpkg.com/ol-geocoder/dist/ol-geocoder.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loadOverlay"><div id="loadOverlayTimer"></div></div>
+    <div id="sidebar">
+      <div id="settings">
+        <input type="button" id="btn_start" value="Start Search" class="btn btn-primary" />
+        <input type="button" id="btn_stop" value="Stop Search" class="btn btn-warning"/>
+        <input type="button" id="btn_reset" value="Reset Map" class="btn btn-danger"/>
+        
+        <div class="input-group input-group-sm mb-3 settings-distance">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Search distance (meters)</span>
+          </div>
+          <input type="text" id="txt_gap" value="500" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"/>
+        </div>
+      </div>
+      <div id="chatListContainer" class="container"><div class="row"><div id="chatList" class="col-sm-6"></div></div></div>
+    </div>
+    <div id="map"></div>
+    <div id="mapExtensions" style="display: none;">
+      <div id="marker" title="Marker"></div>
+      <div id="popup"></div>
+    </div>
+    <script src="web.js"></script>
+  </body>
+</html>
