@@ -4,26 +4,26 @@
   "homepage": "https://github.com/tejado/telegram-nearby-map",
   "license": "GPL-3.0",
   "dependencies": {
-    "await-to-js": "^2.1.1",
+    "await-to-js": "^3.0.0",
     "express": "^4.17.1",
     "express-request-id": "^1.4.1",
-    "tdl": "^6.2.0",
-    "tdl-tdlib-addon": "^0.8.2",
+    "tdl": "^7.0.0",
+    "tdl-tdlib-addon": "^1.0.1",
     "tdlib": "0.0.0-alpha.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "axios": "^0.21.1",
-    "ol": "6.5.0",
+    "axios": "^0.24.0",
+    "ol": "6.9.0",
+    "ol-geocoder": "^4.1.2",
     "ol-popup": "^4.0.0",
-    "ol-geocoder": "^4.1.1",
-    "parcel": "^2.0.0-beta.1"
+    "parcel": "^2.0.1"
   },
   "scripts": {
     "start": "npm run buildParcel && npm run startServer",
     "startServer": "node server.js",
-    "startParcel": "parcel ./web-src/index.html --public-url . --dist-dir ./web-build/",
-    "buildParcel": "parcel build ./web-src/index.html --public-url . --dist-dir ./web-build/"
+    "startParcel": "parcel ./web-src/index.html --public-url / --dist-dir ./web-build/",
+    "buildParcel": "parcel build ./web-src/index.html --public-url / --dist-dir ./web-build/"
   },
   "repository": {
     "type": "git",

@@ -25,3 +25,6 @@ Requirements: node.js and an Telegram account
 7. Go to http://localhost:3000 and have fun
 
 Linux users: you will need to compile TDLib yourself and put it into the lib/tdlib folder.
+
+## Dependencies
+To avoid that you have to build TDLib yourself (https://github.com/tdlib/td#building), I added [tdlib.native](https://github.com/ForNeVeR/tdlib.native/releases) in the lib/tdlib folder. Please note that this is an external dependency that has not been fully reviewed by me!
