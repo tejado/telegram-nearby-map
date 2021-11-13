@@ -33,7 +33,8 @@ app.use(function (error, req, res, next) {
 app.use(express.urlencoded({
     verify: (req, res, buf) => {
       req.rawBody = buf
-    }
+    },
+    extended: false
 }));
 app.use(express.json({
     verify: (req, res, buf) => {
