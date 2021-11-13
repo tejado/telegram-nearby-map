@@ -54,7 +54,7 @@ var stylePositions = new Style({
     }),
 });
 
-styleUsers = new Style({
+let styleUsers = new Style({
     image: new CircleStyle({
         fill: new Fill({
             color: '#fff',
@@ -181,7 +181,7 @@ function refreshNearby(coordinates, nearbyUsers) {
             users[i].name = nearbyUsers[i].name;
 
             if (nearbyUsers[i].photo === undefined) {
-                users[i].photo = `/photos/no_photo.png`;
+                users[i].photo = `/no_photo.png`;
             } else {
                 users[i].photo = `/photos/${nearbyUsers[i].photo}`;
             }

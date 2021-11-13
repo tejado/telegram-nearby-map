@@ -86,7 +86,7 @@ function trilaterate(p1, p2, p3, return_middle) {
         };
     }
 
-    let ex, ey, ez, i, j, d, a, x, y, z, b, p4;
+    let ex, ey, ez, i, j, d, a, x, y, z, b, p4a, p4b;
 
     ex = vector_divide(vector_subtract(p2, p1), norm(vector_subtract(p2, p1)));
 
