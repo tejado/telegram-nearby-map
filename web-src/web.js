@@ -381,7 +381,7 @@ function selectUserInChat(relId, scroll = false) {
 
         newPopup.show(
             c,
-            `<div><img src="${users[chatId].photo}" width="80" height="80" /><p>${users[chatId].name}</p></div>`
+            `<div><img src="${users[chatId].photo}" width="90" height="90" /><p>${users[chatId].name}</p></div>`
         );
     }
 }
