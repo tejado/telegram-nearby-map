@@ -1,4 +1,4 @@
-# Telegram Nearby Map
+# Telegram Nearby Map Forked Intra Daniele Università degli Studi di Milano Statale
 
 Telegram Nearby Map uses OpenStreetMap and the official Telegram library to find the position of nearby users.
 
