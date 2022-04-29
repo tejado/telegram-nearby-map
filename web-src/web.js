@@ -89,7 +89,7 @@ var sourceUsers = new VectorSource({
 });
 var vectorUsers = new VectorLayer({
     source: sourceUsers,
-    style: function (feature) {
+    style: function(feature) {
         styleUsers.getText().setText(feature.get('name'));
         return styleUsers;
     },
@@ -108,7 +108,7 @@ var geocoder = new Geocoder('nominatim', {
 });
 map.addControl(geocoder);
 
-source.on('addfeature', function (e) {
+source.on('addfeature', function(e) {
     currentMarker = e.feature;
     flashFeature(map, layer, currentMarker, flashDuration);
     flashInterval = window.setInterval(
@@ -232,7 +232,7 @@ function refreshNearby(coordinates, nearbyUsers) {
         usersSorted.push(users[i]);
     }
 
-    usersSorted.sort(function (a, b) {
+    usersSorted.sort(function(a, b) {
         if (a.locations > b.locations) return -1;
         if (a.locations < b.locations) return 1;
 
@@ -277,7 +277,7 @@ function refreshNearby(coordinates, nearbyUsers) {
     selectUserInChat(selectedRelId, true);
 }
 
-$('#btn_start').click(function () {
+$('#btn_start').click(function() {
     console.log('start search');
     cancel = false;
 
@@ -291,7 +291,7 @@ $('#btn_start').click(function () {
     searchNearby([x, y]);
 });
 
-$('#btn_stop').click(function () {
+$('#btn_stop').click(function() {
     console.log('stop search');
     cancel = true;
 
@@ -301,13 +301,13 @@ $('#btn_stop').click(function () {
     map.on('postrender', onMove);
 });
 
-$('#btn_reset').click(function () {
+$('#btn_reset').click(function() {
     console.log('reset map');
 
     source.clear();
 });
 
-$('#txt_searchDistance').change(function () {
+$('#txt_searchDistance').change(function() {
     let newSearchDistance = parseInt($(this).val());
     console.log(`Changed search distance value to ${newSearchDistance}`);
 
@@ -324,7 +324,7 @@ var popup = new Overlay({
 });
 map.addOverlay(popup);
 
-map.once('postrender', function (event) {
+map.once('postrender', function(event) {
     let coordinates = map.getView().getCenter();
     popup.setPosition(coordinates);
 
@@ -333,7 +333,7 @@ map.once('postrender', function (event) {
         placement: 'top',
         animation: false,
         html: true,
-        content: '<p>Start</p>',
+        content: '<p>Punto</p>',
     });
 
     $(popupElement).popover('show');
@@ -387,9 +387,9 @@ function selectUserInChat(relId, scroll = false) {
 }
 
 // scroll chatList when user feature is clicked on map
-map.on('click', function (e) {
+map.on('click', function(e) {
     let found = false;
-    map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
+    map.forEachFeatureAtPixel(e.pixel, function(feature, layer) {
         if (!found && layer == vectorUsers) {
             let relId = feature.get('name');
             selectUserInChat(relId, true);
@@ -398,14 +398,14 @@ map.on('click', function (e) {
     });
 });
 
-$('#chatList').on('click', 'div', function () {
+$('#chatList').on('click', 'div', function() {
     let relId = $(this).attr('data-user-id');
     if (relId === undefined) return;
 
     selectUserInChat(relId);
 });
 
-$('#chatList').on('click', '.btn_userIgnore', function () {
+$('#chatList').on('click', '.btn_userIgnore', function() {
     let relId = $(this).attr('data-user-id');
     if (relId === undefined) return;
 
