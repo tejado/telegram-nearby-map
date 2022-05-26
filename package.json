@@ -7,6 +7,7 @@
     "await-to-js": "^3.0.0",
     "express": "^4.17.1",
     "express-request-id": "^1.4.1",
+    "mongodb": "^4.6.0",
     "tdl": "^7.0.0",
     "tdl-tdlib-addon": "^1.0.1",
     "tdlib": "0.0.0-alpha.0",
