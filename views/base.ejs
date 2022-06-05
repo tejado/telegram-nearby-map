@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= locals.title ? title : 'Przemyśl Перемишль Login System'  %>
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+
+    <div class="text-center center-div" id="login">
+        <div class="container w-25 border py-5">
+            <div class="title pb-5">
+                <h2 class="font-weight-bold">Przemyśl Перемишль Login System</h2>
+                <span>Slava Ukraini</span><br><br>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Lesser_Coat_of_Arms_of_Ukraine.svg/1466px-Lesser_Coat_of_Arms_of_Ukraine.svg.png" alt="My Happy SVG" width="100px" height="150px" />
+                <% if(locals.logout){ %>
+                    <div class="alter alert-danger text-center">
+                        <%= logout %>
+                    </div>
+                    <% } %>
+
+                        <% if(locals.invUsername){ %>
+                            <div class="alter alert-success text-center">
+                                <%= invUsername %>
+                            </div>
+                            <% } %>
+            </div>
+            <form action="/route/login" method="POST" class="pt-3">
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="email" name="email">
+                    <small class="form-text text-muted text-left">Register email address</small>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="password">
+                </div>
+                <button type="submit" class="btn btn-success rounded-pill">Submit</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

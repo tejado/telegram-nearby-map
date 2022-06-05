@@ -1,34 +1,43 @@
 {
-  "name": "telegram-nearby-map",
-  "author": "tejado",
-  "homepage": "https://github.com/tejado/telegram-nearby-map",
-  "license": "GPL-3.0",
-  "dependencies": {
-    "await-to-js": "^3.0.0",
-    "express": "^4.17.1",
-    "express-request-id": "^1.4.1",
-    "mongodb": "^4.6.0",
-    "tdl": "^7.0.0",
-    "tdl-tdlib-addon": "^1.0.1",
-    "tdlib": "0.0.0-alpha.0",
-    "winston": "^3.3.3"
-  },
-  "devDependencies": {
-    "axios": "^0.24.0",
-    "ol": "6.9.0",
-    "ol-geocoder": "^4.1.2",
-    "ol-popup": "^4.0.0",
-    "parcel": "^2.0.1",
-    "process": "^0.11.10"
-  },
-  "scripts": {
-    "start": "npm run buildParcel && npm run startServer",
-    "startServer": "node server.js",
-    "startParcel": "parcel ./web-src/index.html --public-url / --dist-dir ./web-build/",
-    "buildParcel": "parcel build ./web-src/index.html --public-url / --dist-dir ./web-build/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tejado/telegram-nearby-map.git"
-  }
+    "name": "telegram-nearby-map",
+    "author": "Daniele Intra",
+    "license": "GPL-3.0",
+    "dependencies": {
+        "await-to-js": "^3.0.0",
+        "express": "^4.17.1",
+        "express-request-id": "^1.4.1",
+        "mongodb": "^4.6.0",
+        "nodemon": "^2.0.16",
+        "tdl": "^7.0.0",
+        "tdl-tdlib-addon": "^1.0.1",
+        "tdlib": "0.0.0-alpha.0",
+        "winston": "^3.3.3",
+        "body-parser": "^1.19.0",
+        "ejs": "^3.1.5",
+        "express-session": "^1.17.1",
+        "uuid": "^8.3.1"
+    },
+    "devDependencies": {
+        "axios": "^0.24.0",
+        "ol": "6.9.0",
+        "ol-geocoder": "^4.1.2",
+        "ol-popup": "^4.0.0",
+        "parcel": "^2.0.1",
+        "process": "^0.11.10"
+    },
+
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tejado/telegram-nearby-map.git"
+    },
+
+    "scripts": {
+        "start": "npm run buildParcel && npm run startServer",
+        "startServer": "node server.js",
+        "startParcel": "parcel ./web-src/index.html --public-url / --dist-dir ./web-build/",
+        "buildParcel": "parcel build ./web-src/index.html --public-url / --dist-dir ./web-build/"
+    }
+
+
 }
