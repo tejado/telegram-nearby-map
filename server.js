@@ -1,6 +1,7 @@
 const express = require('express');
 const addRequestId = require('express-request-id')();
 const log = require('./lib/logger.js');
+const fs = require('fs');
 
 const TelegramNearby = require('./lib/telegram-nearby.js');
 const config = require('./config.js')
@@ -21,7 +22,7 @@ app.use(addRequestId);
 app.use(express.static('./web-build/'));
 app.use('/photos/', express.static('./_td_database/profile_photos/'));
 
-app.use(function (error, req, res, next) {
+app.use(function(error, req, res, next) {
     if (error instanceof SyntaxError) {
         log.warn(`${req.id} - Body Parsing: ${error} (${req.rawBody})`);
         res.status(400).send({ request: req.id });
@@ -32,21 +33,24 @@ app.use(function (error, req, res, next) {
 
 app.use(express.urlencoded({
     verify: (req, res, buf) => {
-      req.rawBody = buf
+        req.rawBody = buf
     },
     extended: false
 }));
 app.use(express.json({
     verify: (req, res, buf) => {
-      req.rawBody = buf
+        req.rawBody = buf
     }
 }));
 
-
+let list = [];
 app.post('/getNearby', (req, res) => {
     log.info(`${req.id} - POST /getNearby`);
 
     log.info(JSON.stringify(req.body));
+    console.log((req.body));
+    list.push(req.body);
+    fs.writeFileSync('./lib/jsonlog.json', JSON.stringify(list));
 
     tg.getNearby(req.body).then((chat) => {
         log.info(`${req.id} - sending 200`);
