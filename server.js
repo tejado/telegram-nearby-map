@@ -3,6 +3,13 @@ const addRequestId = require('express-request-id')();
 const log = require('./lib/logger.js');
 const fs = require('fs');
 
+//login
+const router = require('./router');
+const path = require('path');
+const bodyparser = require("body-parser");
+const session = require("express-session");
+const { v4: uuidv4 } = require("uuid");
+//
 const TelegramNearby = require('./lib/telegram-nearby.js');
 const config = require('./config.js')
 
@@ -17,6 +24,24 @@ if (
 
 const tg = new TelegramNearby(config.telegramApiId, config.telegramApiHash);
 const app = express();
+
+//login
+app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: true }))
+
+app.set('view engine', 'ejs');
+
+// load static assets
+app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/assets', express.static(path.join(__dirname, 'public/assets')))
+
+app.use(session({
+    secret: uuidv4(), //  '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+    resave: false,
+    saveUninitialized: true
+}));
+
+//
 
 app.use(addRequestId);
 app.use(express.static('./web-build/'));
@@ -61,6 +86,15 @@ app.post('/getNearby', (req, res) => {
         res.status(500).send(error);
     });;
 });
+
+//
+app.use('/route', router);
+
+// home route
+app.get('/', (req, res) => {
+    res.render('base', { title: "Przemyśl Перемишль Login System" });
+})
+
 
 
 app.listen(config.port, config.hostname, () => {
