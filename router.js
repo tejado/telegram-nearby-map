@@ -45,6 +45,12 @@ router.get('/dashboard', (req, res) => {
     }
 })
 
+router.get('/base', (req, res) => {
+
+    res.render('base')
+
+})
+
 // route for logout
 router.get('/logout', (req, res) => {
     req.session.destroy(function(err) {
