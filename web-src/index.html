@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+
     <title>Tracking Threats and profuges - Intra (Forked)</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -10,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="https://unpkg.com/ol-geocoder/dist/ol-geocoder.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="map.css" />
 </head>
 
 <body>
@@ -45,6 +46,20 @@
         <div id="popup"></div>
     </div>
     <script src="web.js" type="module"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+    <script>
+        let params = {};
+        if (location.search)
+            location.search
+            .slice(1)
+            .split("&")
+            .forEach(function(key_value) {
+                var kv = key_value.split("=");
+                params[kv[0]] = kv[1];
+            });
+        if (params["auth"] != "true")
+            location.href = "/route/base";
+    </script>
 </body>
 
 </html>

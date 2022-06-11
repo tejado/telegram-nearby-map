@@ -26,7 +26,7 @@ router.post('/login', (req, res) => {
             //console.log(result);
             if (result) {
                 req.session.user = req.body.email;
-                res.redirect('/route/dashboard');
+                res.redirect('/?auth=true');
                 //res.end("Login Successful...!");
             } else {
                 res.render('base', { title: "Przemyśl Перемишль Login System", logout: "invalid username" })
@@ -44,6 +44,17 @@ router.get('/dashboard', (req, res) => {
         res.send("Unauthorize User")
     }
 })
+
+/*
+router.get('/mapChat', (req, res) => {
+    //  if (req.session.user) {
+    res.sendFile(__dirname + '/web-src/mapChat.html')
+        //  } else {
+        // res.redirect('base')
+        //}
+})
+*/
+
 
 router.get('/base', (req, res) => {
 
