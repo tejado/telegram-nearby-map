@@ -24,6 +24,18 @@ Requirements: node.js and an Telegram account
 6. Look carefully at the output: you will need to confirm your Telegram login
 7. Go to http://localhost:3000 and have fun
 
+## Docker
+
+Requirements: docker and docker-compose installed (in new version of docker-cli it's built in syntax instead of `docker-compose` just `docker compose`)
+To make session and data presistent I created two mount points for TDlib files. First as cold run start with downloading this repo
+
+1. First as a cold run to establish session run `docker-compose run telegram-map` and type in your phone number added to telegram account and then type in your confirmation code, then just exit session with Ctrl+C
+
+If you want to have presistent directories somewhere else go into that directory and run `docker-compose -f /full/path/to/docker-compose.yml run telegram-map`
+
+2. From now we can start our service with `docker-compose up -d` or `docker-compose -f /full/path/to/docker-compose.yml up -d`
+3. Enjoy
+
 ## Dependencies
 To avoid that you have to build TDLib yourself (https://github.com/tdlib/td#building), I added [tdlib.native](https://github.com/ForNeVeR/tdlib.native/releases) in the lib/tdlib folder. Please note that this is an external dependency that has not been fully reviewed by me!
 
