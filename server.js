@@ -33,8 +33,11 @@ app.use(bodyparser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs');
 
 // load static assets
-app.use(express.static(path.join(__dirname, 'public')))
-app.use('/assets', express.static(path.join(__dirname, 'public/assets')))
+
+app.use('/', express.static(path.join(__dirname, 'static'))) //qua
+app.use('/ol', express.static(path.join(__dirname, 'node_modules/')))
+
+
 
 app.use(session({
     secret: uuidv4(),
@@ -45,7 +48,7 @@ app.use(session({
 //
 
 app.use(addRequestId);
-app.use(express.static('./web-build/'));
+//app.use(express.static('./web-build/'));
 app.use('/photos/', express.static('./_td_database/profile_photos/'));
 
 app.use(function(error, req, res, next) {
@@ -93,7 +96,9 @@ app.use('/route', router);
 
 
 app.get("/", (req, res) => {
-    res.render("prova.html");
+
+    res.render("index");
+
 })
 
 

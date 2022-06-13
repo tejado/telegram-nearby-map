@@ -122,3 +122,10 @@ config.js
 
 web-build/*
 !web-build/no_photo.png
+package-lock.json
+package-lock.json
+package.json
+package-lock.json
+package-lock.json
+package-lock.json
+package.json

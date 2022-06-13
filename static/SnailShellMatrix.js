@@ -60,4 +60,4 @@ class SnailShellMatrix {
     }
 }
 
-module.exports = SnailShellMatrix;
+export default SnailShellMatrix;
