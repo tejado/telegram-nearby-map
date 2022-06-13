@@ -32,7 +32,9 @@ To make session and data presistent I created two mount points for TDlib files. 
 1. Copy docker.sample.env to .env and edit file to add your telegram bot id and hash
 2. First as a cold run to establish session run `docker-compose run telegram-map` and type in your phone number added to telegram account and then type in your confirmation code, then just exit session with Ctrl+C
 
-If you want to have presistent directories somewhere else go into that directory and run `docker-compose -f /full/path/to/docker-compose.yml run telegram-map`
+    If you want to have presistent directories somewhere else go into that directory and run 
+    
+    ```docker-compose -f /full/path/to/docker-compose.yml run telegram-map```
 
 3. From now we can start our service with `docker-compose up -d` or `docker-compose -f /full/path/to/docker-compose.yml up -d`
 4. Enjoy
