@@ -1,0 +1,16 @@
+version: "3"
+services:
+  telegram-map:
+    container_name: telegram-map
+    build: ./.
+    environment:
+#      - HOST=0.0.0.0 # optional this default value is not need to be changed
+#      - PORT=3000 # optional and  if you change this don't forget to change ports below
+      - TELEGRAM_API_ID=${TELEGRAM_ID}    #set before use
+      - TELEGRAM_API_HASH=${TELEGRAM_HASH}  #set before use
+    volumes:
+      - $PWD/tmdb:/usr/src/app/_td_database
+      - $PWD/tmfiles:/usr/src/app/_td_files
+#      - $PWD/tmlog:/usr/src/app/bot.log  #optional
+    ports:
+      - 3000:3000 # if default PORT environment changed don't forget to change this as well
