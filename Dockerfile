@@ -9,6 +9,6 @@ RUN npm install
 FROM node:17-bullseye-slim as FINAL
 WORKDIR /usr/src/app
 COPY --from=BUILDER /usr/src/app ./
-COPY docker_config.js ./config.js
+#COPY docker_config.js ./config.js
 EXPOSE 3000
 CMD npm start
