@@ -1,9 +1,11 @@
-import { getVectorContext } from 'ol/render';
-import { unByKey } from 'ol/Observable';
-import { easeOut } from 'ol/easing';
-import { Circle as CircleStyle, Stroke, Style } from 'ol/style';
+import "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js";
 
-function flashFeature(map, layer, feature, flashDuration) {
+import { getVectorContext } from './ol/render';
+import { unByKey } from './ol/Observable';
+import { easeOut } from './ol/easing';
+import { Circle as CircleStyle, Stroke, Style } from './ol/style';
+
+export function flashFeature(map, layer, feature, flashDuration) {
     var start = new Date().getTime();
     var listenerKey = layer.on('postrender', animate);
 
@@ -38,4 +40,4 @@ function flashFeature(map, layer, feature, flashDuration) {
     }
 }
 
-module.exports = { flashFeature };
+//module.exports = { flashFeature };

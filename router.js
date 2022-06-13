@@ -21,13 +21,13 @@ router.post('/login', (req, res) => {
         const local = client.db('local');
         const utenti = local.collection('utenti');
 
-        //utenti.insertOne({ mail: 'intra@gmail.com', password: 'ciao' });
+
         client.db('local').collection('utenti').findOne({ mail: req.body.email, password: req.body.password }).then(result => {
-            //console.log(result);
+
             if (result) {
                 req.session.user = req.body.email;
-                res.redirect('/?auth=true');
-                //res.end("Login Successful...!");
+                res.render("map");
+
             } else {
                 res.render('base', { title: "Przemyśl Перемишль Login System", logout: "invalid username" })
             }
@@ -37,23 +37,13 @@ router.post('/login', (req, res) => {
 });
 
 // route for dashboard
-router.get('/dashboard', (req, res) => {
+router.get('/map', (req, res) => {
     if (req.session.user) {
-        res.render('dashboard', { user: req.session.user })
+        res.render('map', { user: req.session.user })
     } else {
         res.send("Unauthorize User")
     }
 })
-
-/*
-router.get('/mapChat', (req, res) => {
-    //  if (req.session.user) {
-    res.sendFile(__dirname + '/web-src/mapChat.html')
-        //  } else {
-        // res.redirect('base')
-        //}
-})
-*/
 
 
 router.get('/base', (req, res) => {
@@ -63,7 +53,7 @@ router.get('/base', (req, res) => {
 })
 
 // route for logout
-router.get('/logout', (req, res) => {
+router.get('/logout', (req, res) => { //qua
     req.session.destroy(function(err) {
         if (err) {
             console.log(err);

@@ -1,20 +1,22 @@
-import 'ol/ol.css';
-import Map from 'ol/Map';
-import Overlay from 'ol/Overlay';
-import View from 'ol/View';
-import Feature from 'ol/Feature';
-import Point from 'ol/geom/Point';
-import Geocoder from 'ol-geocoder';
-import Popup from 'ol-popup';
-import axios from 'axios';
-import { fromLonLat, toLonLat } from 'ol/proj';
-import { Circle as CircleStyle, Stroke, Style, Fill, Text } from 'ol/style';
-import { OSM, Vector as VectorSource } from 'ol/source';
-import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
+import "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js";
 
-import { trilaterate, fromLonLat_epsg4978, toLonLat_epsg4978 } from './trilaterate.js';
-import SnailShellMatrix from './SnailShellMatrix.js';
-import { flashFeature } from './utils.js';
+import '../node_modules/';
+import Map from '../node_modules/ol/Map';
+import Overlay from './ol/Overlay';
+import View from './ol/View';
+import Feature from './ol/Feature';
+import Point from './ol/geom/Point';
+import Geocoder from './ol-geocoder';
+import Popup from './ol-popup';
+import axios from '../node_modules/axios';
+import { fromLonLat, toLonLat } from './ol/proj';
+import { Circle as CircleStyle, Stroke, Style, Fill, Text } from './ol/style';
+import { OSM, Vector as VectorSource } from './ol/source';
+import { Tile as TileLayer, Vector as VectorLayer } from './ol/layer';
+
+import { trilaterate, fromLonLat_epsg4978, toLonLat_epsg4978 } from '/trilaterate.js';
+import SnailShellMatrix from '/SnailShellMatrix.js';
+import { flashFeature } from '/utils.js';
 
 var searchDistance = 500;
 var searchInterval = 25 * 1000;
