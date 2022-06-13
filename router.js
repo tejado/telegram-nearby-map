@@ -26,7 +26,7 @@ router.post('/login', (req, res) => {
 
             if (result) {
                 req.session.user = req.body.email;
-                res.render("map");
+                res.redirect('maps')
 
             } else {
                 res.render('base', { title: "Przemyśl Перемишль Login System", logout: "invalid username" })
@@ -40,6 +40,14 @@ router.post('/login', (req, res) => {
 router.get('/map', (req, res) => {
     if (req.session.user) {
         res.render('map', { user: req.session.user })
+    } else {
+        res.send("Unauthorize User")
+    }
+})
+
+router.get('/maps', (req, res) => {
+    if (req.session.user) {
+        res.render('maps', { user: req.session.user })
     } else {
         res.send("Unauthorize User")
     }

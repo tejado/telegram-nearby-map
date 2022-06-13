@@ -20,8 +20,6 @@
 
         "nodemon": "^2.0.16",
 
-        "ol": "latest",
-
         "parcel-plugin-ejs": "^0.2.0",
 
         "tdl": "^7.0.0",
@@ -62,6 +60,10 @@
 
         "parcel": "^2.6.0",
 
+        "parcel-bundler": "^1.12.5",
+
+        "parcel-plugin-ejs-template": "^0.2.0",
+
         "process": "^0.11.10",
 
         "tdl": "^7.0.0",
@@ -99,3 +101,4 @@
     "main": "server.js"
 
 }
+
