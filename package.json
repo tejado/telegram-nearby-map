@@ -1,22 +1,14 @@
 {
 
     "name": "telegram-nearby-map",
-<<<<<<< HEAD
     "author": "tejado",
     "homepage": "https://github.com/tejado/telegram-nearby-map",
-=======
 
-    "author": "tejado",
-
-    "homepage": "https://github.com/tejado/telegram-nearby-map",
-
->>>>>>> 390afbe1a7aebfcecfaa719b8883f643139eee45
     "license": "GPL-3.0",
 
     "dependencies": {
 
         "await-to-js": "^3.0.0",
-<<<<<<< HEAD
         "express": "^4.17.1",
         "express-request-id": "^1.4.1",
         "mongodb": "^4.6.0",
@@ -34,17 +26,7 @@
         "parcel": "^2.0.1",
         "process": "^0.11.10",
         "await-to-js": "^3.0.0",
-        "express": "^4.17.1",
-        "express-request-id": "^1.4.1",
-        "mongodb": "^4.6.0",
-        "nodemon": "^2.0.16",
-        "tdl": "^7.0.0",
-        "tdl-tdlib-addon": "^1.0.1",
-        "tdlib": "0.0.0-alpha.0",
-        "winston": "^3.3.3",
-=======
 
->>>>>>> 390afbe1a7aebfcecfaa719b8883f643139eee45
         "body-parser": "^1.19.0",
 
         "ejs": "^3.1.5",
@@ -70,26 +52,6 @@
         "winston": "^3.3.3"
 
     },
-<<<<<<< HEAD
-=======
-
-    "devDependencies": {
-
-        "axios": "^0.24.0",
-
-        "ol": "6.9.0",
-
-        "ol-geocoder": "^4.1.2",
-
-        "ol-popup": "^4.0.0",
-
-        "parcel": "^2.0.1",
-
-        "process": "^0.11.10"
-
-    },
-
->>>>>>> 390afbe1a7aebfcecfaa719b8883f643139eee45
     "scripts": {
 
         "start": "npm run buildParcel && npm run startServer",
@@ -99,29 +61,11 @@
         "startParcel": "parcel ./web-src/index.html --public-url / --dist-dir ./web-build/",
 
         "buildParcel": "parcel build ./web-src/index.html --public-url / --dist-dir ./web-build/"
-<<<<<<< HEAD
+
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/tejado/telegram-nearby-map.git"
     }
+
 }
-=======
-
-    },
-
-    "repository": {
-
-        "type": "git",
-
-        "url": "https://github.com/tejado/telegram-nearby-map.git"
-
-    }
-
-<<<<<<< HEAD
-}
-=======
-}
-
->>>>>>> 390afbe1a7aebfcecfaa719b8883f643139eee45
->>>>>>> e0d61177f9e4ead45711a36af6f04ec7ad98e8b0

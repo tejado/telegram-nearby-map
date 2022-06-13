@@ -122,3 +122,5 @@ config.js
 
 web-build/*
 !web-build/no_photo.png
+package.json
+lib/jsonlog.json
