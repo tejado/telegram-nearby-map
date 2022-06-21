@@ -36,7 +36,7 @@ app.set('view engine', 'ejs');
 
 app.use('/', express.static(path.join(__dirname, 'static'))) //qua
 app.use('/ol', express.static(path.join(__dirname, 'node_modules/')))
-
+app.use('/dist', express.static(path.join(__dirname, 'dist/')))
 
 
 app.use(session({

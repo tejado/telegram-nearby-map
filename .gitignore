@@ -122,6 +122,10 @@ config.js
 
 web-build/*
 !web-build/no_photo.png
+<<<<<<< HEAD
+package.json
+lib/jsonlog.json
+=======
 package-lock.json
 package-lock.json
 package.json
@@ -129,3 +133,7 @@ package-lock.json
 package-lock.json
 package-lock.json
 package.json
+>>>>>>> 3992cfb1937a0f7eb6ab848d3270df9e8bf40687
+package-lock.json
+package.json
+lib/jsonlog.json

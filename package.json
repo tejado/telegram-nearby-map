@@ -40,6 +40,8 @@
 
         "body-parser": "^1.19.0",
 
+        "cssnano": "^4.1.11",
+
         "ejs": "^3.1.5",
 
         "express": "^4.17.1",
@@ -84,9 +86,9 @@
 
         "startServer": "node server.js",
 
-        "startParcel": "parcel ./views/map.ejs ",
+        "startParcel": "parcel ./views/maps.ejs ",
 
-        "buildParcel": "parcel build ./views/map.ejs --public-url / "
+        "buildParcel": "parcel build ./views/maps.ejs --public-url /"
 
     },
 
@@ -96,9 +98,6 @@
 
         "url": "https://github.com/tejado/telegram-nearby-map.git"
 
-    },
-
-    "main": "server.js"
+    }
 
 }
-
