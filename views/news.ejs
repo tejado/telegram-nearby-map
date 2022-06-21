@@ -2,24 +2,43 @@
 <html lang="en">
 
 <head>
+    <!-- Google Font -->
 
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- CSS
+    ================================================== -->
+    <!-- Fontawesome Icon font -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Twitter Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jquery.fancybox  -->
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- media-queries -->
+    <link rel="stylesheet" href="css/media-queries.css">
 </head>
 
-<body class="container">
+<body>
 
 
 
     <main>
-        <div class="jumbotron">
-            <h1>This is great</h1>
-            <p>Welcome to templating using EJS</p>
-
-            <h2>
-
-            </h2>
-            </h2>
+        <div>
             <p>
-                <%= url %>
+                <% data.forEach(function(val, index) {%>
+                    <h1>
+                        <%=val.title %>
+                    </h1>
+
+                    <li>
+
+                        <%=val.url %>
+                    </li>
+                    <%})%>
             </p>
         </div>
     </main>
