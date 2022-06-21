@@ -36,14 +36,6 @@ router.post('/login', (req, res) => {
     });
 });
 
-// route for dashboard
-router.get('/map', (req, res) => {
-    if (req.session.user) {
-        res.render('map', { user: req.session.user })
-    } else {
-        res.send("Unauthorize User")
-    }
-})
 
 router.get('/maps', (req, res) => {
     if (req.session.user) {
@@ -57,6 +49,12 @@ router.get('/maps', (req, res) => {
 router.get('/base', (req, res) => {
 
     res.render('base')
+
+})
+
+router.get('/news', (req, res) => {
+
+    res.render('news')
 
 })
 
