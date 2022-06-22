@@ -46,6 +46,10 @@ router.get('/maps', (req, res) => {
     }
 })
 
+router.get('/map', (req, res) => {
+    res.render('map')
+})
+
 
 router.get('/base', (req, res) => {
 

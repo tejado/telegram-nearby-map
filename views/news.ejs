@@ -2,24 +2,11 @@
 <html lang="en">
 
 <head>
-    <!-- Google Font -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- CSS
-    ================================================== -->
-    <!-- Fontawesome Icon font -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- Twitter Bootstrap css -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- jquery.fancybox  -->
-    <link rel="stylesheet" href="css/jquery.fancybox.css">
-    <!-- animate -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- media-queries -->
-    <link rel="stylesheet" href="css/media-queries.css">
 </head>
 
 <body>
@@ -27,23 +14,27 @@
 
 
     <main>
-        <div>
-            <p>
-                <% data.forEach(function(val, index) {%>
-                    <h1>
-                        <%=val.title %>
-                    </h1>
 
-                    <li>
+        <div><input type="button" style="margin: 10px ;" id="home" value="Home" onclick="location.href = '/';" class="btn btn-danger"></div>
+        <h1 class="display-4 text-danger">Latest UKrain-Russian War News from Guardian</h1>
 
+        <% data.forEach(function(val, index) {%>
+            <div class="list-group">
+                <a href="<%=val.url %>" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">
+                            <%=val.title %>
+                        </h5>
+                    </div>
+                    <p class="mb-1">
                         <%=val.url %>
-                    </li>
-                    <%})%>
-            </p>
-        </div>
-    </main>
+                    </p>
+                    <small class="text-muted">Guardian</small>
+                </a>
+            </div>
+            <%})%>
 
-    <script type="text/javascript" src="../static/news.js"></script>
+
 
 </body>
 

@@ -13,6 +13,9 @@ const { v4: uuidv4 } = require("uuid");
 const TelegramNearby = require('./lib/telegram-nearby.js');
 const config = require('./config.js');
 
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://127.0.0.1:27017';
+
 
 if (
     config.telegramApiId === undefined ||
@@ -76,21 +79,34 @@ let list = [];
 app.post('/getNearby', (req, res) => {
     log.info(`${req.id} - POST /getNearby`);
 
-    log.info(JSON.stringify(req.body));
+    log.info(JSON.stringify(req.body)); //scrivo su file JSON
     console.log((req.body));
     list.push(req.body);
     fs.writeFileSync('./lib/jsonlog.json', JSON.stringify(list));
 
-    tg.getNearby(req.body).then((chat) => {
-        log.info(`${req.id} - sending 200`);
-        res.send(chat);
-    }).catch((error) => {
-        console.log(error.stack)
-        log.crit(`${req.id} - ${error}`);
-        res.status(500).send(error);
-    });;
-});
+    //store in mongodb
+    MongoClient.connect(url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }, (err, client) => {
+        if (err) {
+            return console.log(err);
+        } else { console.log('Mongo is connected') }
+        client.db('local').collection('position').insertOne(req.body);
 
+
+
+
+        tg.getNearby(req.body).then((chat) => {
+            log.info(`${req.id} - sending 200`);
+            res.send(chat);
+        }).catch((error) => {
+            console.log(error.stack)
+            log.crit(`${req.id} - ${error}`);
+            res.status(500).send(error);
+        });;
+    });
+});
 //
 app.use('/route', router);
 
