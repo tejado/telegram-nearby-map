@@ -3,7 +3,7 @@ const addRequestId = require('express-request-id')();
 const log = require('./lib/logger.js');
 const fs = require('fs');
 
-//login
+
 const router = require('./router');
 const path = require('path');
 const bodyparser = require("body-parser");

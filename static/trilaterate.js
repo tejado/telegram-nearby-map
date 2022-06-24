@@ -148,6 +148,7 @@ export function fromLonLat_epsg4978(point) {
     point.z = earthRadius * 1000 * Math.sin(point.lat * (Math.PI / 180));
 
     return point;
+
 }
 
 //module.exports = { trilaterate, toLonLat_epsg4978, fromLonLat_epsg4978 };

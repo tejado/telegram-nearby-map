@@ -47,8 +47,27 @@ router.get('/maps', (req, res) => {
 })
 
 router.get('/map', (req, res) => {
-    res.render('map')
-})
+
+
+    MongoClient.connect(url, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }, (err, client) => {
+        if (err) {
+            return console.log(err);
+        } else { console.log('Mongo is connected') }
+
+
+        client.db('local').collection('position').find({}).toArray().then(result => {
+            res.render('map', { result: JSON.stringify(result) })
+
+
+        })
+    })
+
+});
+
+
 
 
 router.get('/base', (req, res) => {

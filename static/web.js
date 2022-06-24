@@ -222,8 +222,8 @@ function refreshNearby(coordinates, nearbyUsers) {
                         time: now,
                         coordinates: triC,
                     });
-
-                    addUserMarker(triC, users[i].relId.toString());
+                    log.info(triC), //real position
+                        addUserMarker(triC, users[i].relId.toString());
                 }
             }
         }

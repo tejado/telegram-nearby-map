@@ -3,7 +3,10 @@
 <head>
     <title>Display Positions</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5CJQIPQodlFJuvnV1iutU2xojV84M5dI&callback=initMap&v=weekly" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <style>
         /* Set the size of the div element that contains the map */
         
@@ -14,19 +17,52 @@
     </style>
 </head>
 
-<body>
+<body onload="printLocations();">
+    <div><input type="button" style="margin: 10px ;" id="home" value="Home" onclick="location.href = '/';" class="btn btn-danger"></div>
     <h3>Positions acquired during sessions</h3>
     <!--The div element for the map -->
     <div id="map"></div>
+    <script>
+        var map;
 
-    <!-- 
-     The `defer` attribute causes the callback to execute after the full HTML
-     document has been parsed. For non-blocking uses, avoiding race conditions,
-     and consistent behavior across browsers, consider loading using Promises
-     with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-    -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5CJQIPQodlFJuvnV1iutU2xojV84M5dI&callback=initMap&v=weekly" defer></script>
-    <script src="/gMap.js"></script>
+        function initMap() {
+            // The location of Kiev
+            const Kiev = {
+                lat: 50.45466,
+                lng: 30.5238
+            };
+            // The map, centered at Kiev
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: Kiev,
+            });
+            // The marker, positioned at Kiev
+
+
+
+
+
+        }
+        var arr = JSON.parse('<%- result %>');
+
+        function printLocations() {
+            for (let i = 0; i < arr.length; i++) {
+                const marker = new google.maps.Marker({
+                    map: map,
+                    position: {
+                        lat: arr[i].lat,
+                        lng: arr[i].lon
+                    },
+                })
+            } //take data from mongo INTRAPC
+
+        }
+
+        window.initMap = initMap;
+    </script>
+
+
 </body>
 
 </html>
