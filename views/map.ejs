@@ -12,33 +12,6 @@
             width: 100%;
         }
     </style>
-
-    <script>
-        // Initialize and add the map
-        function initMap() {
-            // The location of Kiev
-            const Kiev = {
-                lat: 50.45466,
-                lng: 30.5238
-            };
-            // The map, centered at Kiev
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 6.5,
-                center: Kiev,
-            });
-            // The marker, positioned at Kiev
-
-            let positions = JSON.stringify('/lib');
-            console.log(JSON.stringify(positions)) //da sistemare, meglio usare mongodb
-            const marker = new google.maps.Marker({
-                position: Kiev,
-                map: map,
-
-            });
-        }
-
-        window.initMap = initMap;
-    </script>
 </head>
 
 <body>
@@ -53,6 +26,7 @@
      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
     -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5CJQIPQodlFJuvnV1iutU2xojV84M5dI&callback=initMap&v=weekly" defer></script>
+    <script src="/gMap.js"></script>
 </body>
 
 </html>

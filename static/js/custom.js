@@ -2,11 +2,7 @@
 /*	Preloader
 /* ========================================================================= */
 
-jQuery(window).load(function() {
 
-    $("#preloader").fadeOut("slow");
-
-});
 
 
 $(document).ready(function() {
@@ -118,37 +114,6 @@ $(document).ready(function() {
 });
 
 
-// ==========  START GOOGLE MAP ========== //
-function initialize() {
-    var myLatLng = new google.maps.LatLng(22.402789, 91.822156);
 
-    var mapOptions = {
-        zoom: 14,
-        center: myLatLng,
-        disableDefaultUI: true,
-        scrollwheel: false,
-        navigationControl: false,
-        mapTypeControl: false,
-        scaleControl: false,
-        draggable: false,
-        mapTypeControlOptions: {
-            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'roadatlas']
-        }
-    };
-
-    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
-
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: 'img/location-icon.png',
-        title: '',
-    });
-
-}
 const observer = lozad();
 observer.observe();
-
-google.maps.event.addDomListener(window, "load", initialize);
-// ========== END GOOGLE MAP ========== //

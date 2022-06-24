@@ -18,8 +18,6 @@
 
         "lozad": "^1.16.0",
 
-        "mongodb": "^4.6.0",
-
         "nodemon": "^2.0.16",
 
         "parcel-plugin-ejs": "^0.2.0",
@@ -30,7 +28,9 @@
 
         "tdlib": "0.0.0-alpha.0",
 
-        "winston": "^3.3.3"
+        "winston": "^3.3.3",
+
+        "mongodb": "^4.7.0"
 
     },
 
@@ -52,7 +52,7 @@
 
         "express-session": "^1.17.1",
 
-        "mongodb": "^4.6.0",
+        "mongodb": "^4.7.0",
 
         "nodemon": "^2.0.16",
 
@@ -84,7 +84,7 @@
 
     "scripts": {
 
-        "start": "npm run buildParcel && npm run startServer",
+        "start": "node server,js",
 
         "startServer": "node server.js",
 
@@ -103,4 +103,3 @@
     }
 
 }
-

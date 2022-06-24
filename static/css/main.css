@@ -130,22 +130,6 @@ body>section,
     margin-bottom: 50px;
 }
 
-#preloader {
-    background-color: #fff;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-    z-index: 1800;
-}
-
-#preloader>img {
-    position: absolute;
-    height: 40%;
-    width: 30%;
-    top: 30%;
-    left: 35%;
-}
-
 
 /*=========================================
 	Header
@@ -434,64 +418,6 @@ body>section,
 
 
 /*=========================================
-	Our Team Member
-==========================================*/
-
-.member-thumb {
-    width: 273px;
-    position: relative;
-}
-
-.member-thumb .overlay h5 {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
-    margin: 10px 0;
-}
-
-.member-thumb .overlay {
-    font-size: 16px;
-    padding: 20px;
-    line-height: 24px;
-}
-
-.team-member h4 {
-    color: #062033;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 24px;
-    margin: 15px 0 8px;
-}
-
-.member-thumb:hover .overlay {
-    cursor: pointer;
-    opacity: 1;
-    filter: alpha(opacity=100);
-    -webkit-transform: rotateY(0deg) scale(1, 1);
-    -moz-transform: rotateY(0deg) scale(1, 1);
-    -ms-transform: rotateY(0deg) scale(1, 1);
-    -o-transform: rotateY(0deg) scale(1, 1);
-    transform: rotateY(0deg) scale(1, 1);
-}
-
-.team-member:hover h4 {
-    color: #0eb493;
-}
-
-.team-member .social-links {
-    margin-top: 24%;
-}
-
-.team-member .social-links li a {
-    background-color: #0d7c67;
-    color: #fff;
-    height: 42px;
-    padding: 10px 0 0;
-    width: 42px;
-}
-
-
-/*=========================================
 	Some fun facts
 ==========================================*/
 
@@ -546,95 +472,6 @@ body>section,
     line-height: 24px;
     margin-top: 15px;
     text-transform: uppercase;
-}
-
-
-/*=========================================
-	Contact Us
-==========================================*/
-
-.contact {
-    padding-bottom: 0;
-}
-
-.contact-address h3 {
-    color: #062033;
-    font-size: 22px;
-    line-height: 32px;
-    margin-bottom: 25px;
-}
-
-.contact-address p {
-    line-height: 24px;
-}
-
-.contact-form {}
-
-.contact-form h3 {
-    color: #062033;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 32px;
-    margin-bottom: 25px;
-}
-
-.contact-form .input-group {
-    width: 100%;
-}
-
-.contact-form .form-control {
-    border-color: -moz-use-text-color -moz-use-text-color #cccccc;
-    border-radius: 0;
-    border-style: none none solid;
-    border-width: 0 0 1px;
-    box-shadow: none;
-    margin-bottom: 10px;
-}
-
-.contact-form .input-field {
-    width: 48%;
-    float: left;
-    margin-right: 4%;
-}
-
-.contact-form .input-field:last-child {
-    margin-right: 0;
-}
-
-.contact-form .form-control.error {
-    border-bottom-color: #c0392b;
-}
-
-label.error {
-    color: #c0392b;
-    font-weight: normal;
-    text-transform: capitalize;
-}
-
-.contact-form #form-submit {
-    background: url("../img/envelop.png") no-repeat scroll 0 15px transparent;
-    border: 0 none;
-    color: #000;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 10px;
-    text-align: right;
-    width: 150px;
-}
-
-.footer-social {
-    margin-top: 17px;
-}
-
-.footer-social li a {
-    color: #cdd2d6;
-    display: block;
-    margin-bottom: 10px;
-}
-
-#map_canvas {
-    height: 215px;
-    width: 100%;
 }
 
 
