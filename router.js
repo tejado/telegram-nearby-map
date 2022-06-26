@@ -1,9 +1,11 @@
+const { name } = require("ejs");
 const { response } = require("express");
 var express = require("express");
 var router = express.Router();
 
 const MongoClient = require('mongodb').MongoClient;
 const url = 'mongodb://127.0.0.1:27017';
+
 
 
 // login user
@@ -17,11 +19,6 @@ router.post('/login', (req, res) => {
         if (err) {
             return console.log(err);
         } else { console.log('Mongo is connected') }
-
-        //nome db e nome collection
-        const local = client.db('local');
-        const utenti = local.collection('utenti');
-
 
         client.db('local').collection('utenti').findOne({ mail: req.body.email, password: req.body.password }).then(result => {
 
@@ -68,6 +65,11 @@ router.get('/map', (req, res) => {
 });
 
 
+router.get('/book', (req, res) => {
+
+    res.render('book')
+
+})
 
 
 router.get('/base', (req, res) => {
