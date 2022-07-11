@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tracking Threats and profuges - Intra (Forked)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="https://unpkg.com/ol-geocoder/dist/ol-geocoder.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../dist/index.css">
+    <link rel="icon" href="/img/icon.png">
+</head>
+
+<body>
+    <div id="loadOverlay">
+        <div id="loadOverlayTimer"></div>
+    </div>
+    <div id="title">
+        <h1>Tracking Threats and profuges - Intra (Forked)</h1>
+    </div>
+    <div id="sidebar">
+        <div id="settings"> <input type="button" id="btn_start" value="Inizia Ricerca" class="btn btn-primary"> <input type="button" id="btn_stop" value="Stop Ricerca" class="btn btn-warning"> <input type="button" id="btn_reset" value="Cancella Mappa" class="btn btn-danger">
+            <input type="button" id="logout" value="Logout" onclick="location.href = '/route/logout';" class="btn btn-danger">
+            <div class="input-group input-group-sm mb-3 settings-distance">
+                <div class="input-group-prepend"> <span class="input-group-text" id="inputGroup-sizing-sm">Inserisci Raggio Ricerca (Km)</span> </div> <input type="text" id="txt_gap" value="1500" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> </div>
+        </div>
+        <div id="chatListContainer" class="container">
+            <div class="row">
+                <div id="chatList" class="col-sm-6"></div>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+    <div id="mapExtensions" style="display:none;">
+        <div id="marker" title="Marker"></div>
+        <div id="popup"></div>
+    </div>
+    <script src="../dist/index.js" type="module"></script>
+</body>
+
+</html>

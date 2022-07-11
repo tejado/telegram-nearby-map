@@ -1,20 +1,22 @@
-import 'ol/ol.css';
-import Map from 'ol/Map';
-import Overlay from 'ol/Overlay';
-import View from 'ol/View';
-import Feature from 'ol/Feature';
-import Point from 'ol/geom/Point';
-import Geocoder from 'ol-geocoder';
-import Popup from 'ol-popup';
-import axios from 'axios';
-import { fromLonLat, toLonLat } from 'ol/proj';
-import { Circle as CircleStyle, Stroke, Style, Fill, Text } from 'ol/style';
-import { OSM, Vector as VectorSource } from 'ol/source';
-import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
+import "https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js";
 
-import { trilaterate, fromLonLat_epsg4978, toLonLat_epsg4978 } from './trilaterate.js';
-import SnailShellMatrix from './SnailShellMatrix.js';
-import { flashFeature } from './utils.js';
+import '../node_modules/';
+import Map from '../node_modules/ol/Map';
+import Overlay from './ol/Overlay';
+import View from './ol/View';
+import Feature from './ol/Feature';
+import Point from './ol/geom/Point';
+import Geocoder from './ol-geocoder';
+import Popup from './ol-popup';
+import axios from '../node_modules/axios';
+import { fromLonLat, toLonLat } from './ol/proj';
+import { Circle as CircleStyle, Stroke, Style, Fill, Text } from './ol/style';
+import { OSM, Vector as VectorSource } from './ol/source';
+import { Tile as TileLayer, Vector as VectorLayer } from './ol/layer';
+
+import { trilaterate, fromLonLat_epsg4978, toLonLat_epsg4978 } from '/trilaterate.js';
+import SnailShellMatrix from '/SnailShellMatrix.js';
+import { flashFeature } from '/utils.js';
 
 var searchDistance = 500;
 var searchInterval = 25 * 1000;
@@ -89,7 +91,7 @@ var sourceUsers = new VectorSource({
 });
 var vectorUsers = new VectorLayer({
     source: sourceUsers,
-    style: function (feature) {
+    style: function(feature) {
         styleUsers.getText().setText(feature.get('name'));
         return styleUsers;
     },
@@ -108,7 +110,7 @@ var geocoder = new Geocoder('nominatim', {
 });
 map.addControl(geocoder);
 
-source.on('addfeature', function (e) {
+source.on('addfeature', function(e) {
     currentMarker = e.feature;
     flashFeature(map, layer, currentMarker, flashDuration);
     flashInterval = window.setInterval(
@@ -220,8 +222,8 @@ function refreshNearby(coordinates, nearbyUsers) {
                         time: now,
                         coordinates: triC,
                     });
-
-                    addUserMarker(triC, users[i].relId.toString());
+                    log.info(triC), //real position
+                        addUserMarker(triC, users[i].relId.toString());
                 }
             }
         }
@@ -232,7 +234,7 @@ function refreshNearby(coordinates, nearbyUsers) {
         usersSorted.push(users[i]);
     }
 
-    usersSorted.sort(function (a, b) {
+    usersSorted.sort(function(a, b) {
         if (a.locations > b.locations) return -1;
         if (a.locations < b.locations) return 1;
 
@@ -277,7 +279,7 @@ function refreshNearby(coordinates, nearbyUsers) {
     selectUserInChat(selectedRelId, true);
 }
 
-$('#btn_start').click(function () {
+$('#btn_start').click(function() {
     console.log('start search');
     cancel = false;
 
@@ -291,7 +293,7 @@ $('#btn_start').click(function () {
     searchNearby([x, y]);
 });
 
-$('#btn_stop').click(function () {
+$('#btn_stop').click(function() {
     console.log('stop search');
     cancel = true;
 
@@ -301,13 +303,13 @@ $('#btn_stop').click(function () {
     map.on('postrender', onMove);
 });
 
-$('#btn_reset').click(function () {
+$('#btn_reset').click(function() {
     console.log('reset map');
 
     source.clear();
 });
 
-$('#txt_searchDistance').change(function () {
+$('#txt_searchDistance').change(function() {
     let newSearchDistance = parseInt($(this).val());
     console.log(`Changed search distance value to ${newSearchDistance}`);
 
@@ -324,7 +326,7 @@ var popup = new Overlay({
 });
 map.addOverlay(popup);
 
-map.once('postrender', function (event) {
+map.once('postrender', function(event) {
     let coordinates = map.getView().getCenter();
     popup.setPosition(coordinates);
 
@@ -333,7 +335,7 @@ map.once('postrender', function (event) {
         placement: 'top',
         animation: false,
         html: true,
-        content: '<p>Start</p>',
+        content: '<p>Punto</p>',
     });
 
     $(popupElement).popover('show');
@@ -381,15 +383,15 @@ function selectUserInChat(relId, scroll = false) {
 
         newPopup.show(
             c,
-            `<div><img src="${users[chatId].photo}" width="80" height="80" /><p>${users[chatId].name}</p></div>`
+            `<div><img src="${users[chatId].photo}" width="90" height="90" /><p>${users[chatId].name}</p></div>`
         );
     }
 }
 
 // scroll chatList when user feature is clicked on map
-map.on('click', function (e) {
+map.on('click', function(e) {
     let found = false;
-    map.forEachFeatureAtPixel(e.pixel, function (feature, layer) {
+    map.forEachFeatureAtPixel(e.pixel, function(feature, layer) {
         if (!found && layer == vectorUsers) {
             let relId = feature.get('name');
             selectUserInChat(relId, true);
@@ -398,14 +400,14 @@ map.on('click', function (e) {
     });
 });
 
-$('#chatList').on('click', 'div', function () {
+$('#chatList').on('click', 'div', function() {
     let relId = $(this).attr('data-user-id');
     if (relId === undefined) return;
 
     selectUserInChat(relId);
 });
 
-$('#chatList').on('click', '.btn_userIgnore', function () {
+$('#chatList').on('click', '.btn_userIgnore', function() {
     let relId = $(this).attr('data-user-id');
     if (relId === undefined) return;
 

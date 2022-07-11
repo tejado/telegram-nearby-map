@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <!-- meta charec set -->
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Page Title -->
+    <title>Przemysl refugees center</title>
+    <!-- Meta Description -->
+    <meta name="description" content="Utility web interface for operators and volounteers in Przemysl">
+    <meta name="keywords" content="ukraine, poland, refugees, tesco, humanitarian aid, stopthewar">
+    <meta name="author" content="Daniele Intra">
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="/img/icon.png">
+    <!-- Google Font -->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- CSS
+		================================================== -->
+    <!-- Fontawesome Icon font -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Twitter Bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- jquery.fancybox  -->
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <!-- animate -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- media-queries -->
+    <link rel="stylesheet" href="css/media-queries.css">
+
+    <!-- Modernizer Script for old Browsers -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+
+</head>
+
+<body id="body">
+    <!-- 
+        Fixed Navigation
+        ==================================== -->
+    <header id="navigation" class="navbar-fixed-top navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- responsive nav button -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="fa fa-bars fa-2x"></i>
+                    </button>
+                <!-- /responsive nav button -->
+
+                <!-- logo -->
+                <a class="navbar-brand" href="/">
+                    <h1 id="logo">
+                        <img src="img/logo.png" alt="Brandi" width="150x" height="50px"></h1>
+                    </h1>
+                </a>
+                <!-- /logo -->
+            </div>
+
+            <!-- main nav -->
+            <nav class="collapse navbar-collapse navbar-right" role="navigation">
+                <ul id="nav" class="nav navbar-nav">
+                    <li class="current"><a href="#body">Home</a></li>
+                    <li onclick="location.href = '/route/map'"><a>Map</a></li>
+                    <li><a href="#works">Photos</a></li>
+                    <li onclick="location.href = '/route/news'"><a>News</a></li>
+                    <li onclick="location.href = '/route/book'"><a>Book</a></li>
+                    <li onclick="location.href = '/route/base'"><a>Login</a></li>
+                </ul>
+            </nav>
+            <!-- /main nav -->
+
+        </div>
+    </header>
+
+    <!--
+        Home Slider
+        ==================================== -->
+
+    <section id="slider">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators bullet -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            </ol>
+            <!-- End Indicators bullet -->
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+
+                <!-- single slide -->
+                <div class="item active" style="background-image: url(img/banner.jpg);">
+                    <div class="carousel-caption">
+                        <h2 data-wow-duration="700ms" data-wow-delay="500ms" class="wow bounceInDown animated">Przemysl<span> Center</span></h2>
+                        <h3 data-wow-duration="1000ms" class="wow slideInLeft animated"><span class="color">/STOP</span> war</h3>
+                        <p data-wow-duration="1000ms" class="wow slideInRight animated">by Daniele Intra</p>
+                    </div>
+                </div>
+                <!-- end single slide -->
+
+                <!-- single slide -->
+                <div class="item" style="background-image: url(img/banner.jpg);">
+                    <div class="carousel-caption">
+                        <h2 data-wow-duration="500ms" data-wow-delay="500ms" class="wow bounceInDown animated">Help<span> Refugees</span>!</h2>
+                        <h3 data-wow-duration="500ms" class="wow slideInLeft animated"><span class="color">/make</span> peace</h3>
+                        <p data-wow-duration="500ms" class="wow slideInRight animated">make a difference</p>
+                    </div>
+                </div>
+                <!-- end single slide -->
+
+            </div>
+            <!-- End Wrapper for slides -->
+
+        </div>
+    </section>
+
+    <!--
+        End Home SliderEnd
+        ==================================== -->
+
+    <!--
+        Features
+        ==================================== -->
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+
+                <div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
+                    <h2>Features</h2>
+                    <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+                </div>
+
+                <!-- service item -->
+                <div class="col-md-4 wow fadeInLeft" data-wow-duration="500ms">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-arrows" style="font-size:25px;color:#10b492;align-content: center;"></i>
+                        </div>
+
+                        <div class="service-desc">
+                            <h3>Center Interface</h3>
+                            <p>The project provide an interface with news, telegram channel, photo (reportage) and other work in progress features</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end service item -->
+
+                <!-- service item -->
+                <div class="col-md-4 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-pencil fa-2x"></i>
+                        </div>
+
+                        <div class="service-desc">
+                            <h3>Tracking on Map</h3>
+                            <p>Another feature reserved only to center's operators is a tracking tool using Telegram Nearby</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end service item -->
+
+                <!-- service item -->
+                <div class="col-md-4 wow fadeInRight" data-wow-duration="500ms" data-wow-delay="900ms">
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <i class="fa fa-bullhorn fa-2x"></i>
+                        </div>
+
+                        <div class="service-desc">
+                            <h3>Data Storing and Studying</h3>
+                            <p>Once the positions are stored in a db, users can review them on a google map in an easy way.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- end service item -->
+
+            </div>
+        </div>
+    </section>
+
+    <!--
+        End Features
+        ==================================== -->
+
+
+    <!--
+        Our Works
+        ==================================== -->
+
+    <section id="works" class="works clearfix">
+        <div class="container">
+            <div class="row">
+
+                <div class="sec-title text-center">
+                    <h2>Reportage</h2>
+                    <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+                </div>
+
+                <div class="sec-sub-title text-center">
+                    <p>Photos taken on the border in medyka and inside the Przemysl refugee center </p>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="project-wrapper">
+
+            <figure class="mix work-item branding">
+                <img src="img/works/item-1.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Medyka, Italian camp" href="img/works/item-1.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Medyka, Italian camp</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+            <figure class="mix work-item web">
+                <img src="img/works/item-2.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Medyka, clothes and primary things" href="img/works/item-2.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Medyka, clothes and primary things</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+            <figure class="mix work-item logo-design">
+                <img src="img/works/item-3.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Medyka, soldiers helping people" href="img/works/item-3.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Medyka, soldiers helping people</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+            <figure class="mix work-item photography">
+                <img src="img/works/item-4.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Medyka, soldiers and TVs" href="img/works/item-4.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Medyka, soldiers and TVs</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+            <figure class="mix work-item branding">
+                <img src="img/works/item-5.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Przemysl, Austria's camp" href="img/works/item-5.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Przemysl, Austria's camp</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+            <figure class="mix work-item web">
+                <img src="img/works/item-6.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Przemysl, volounteers searching for refugees" href="img/works/item-6.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Przemysl, volounteers searching for refugees</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+            <figure class="mix work-item logo-design">
+                <img src="img/works/item-7.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Przemysl, Italian camp" href="img/works/item-7.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Przemysl, Italian camp</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+            <figure class="mix work-item photography">
+                <img src="img/works/item-8.jpg" class="lozad" alt="">
+                <figcaption class="overlay">
+                    <a class="fancybox" rel="works" title="Przemysl, Tesco profugees centre" href="img/works/item-8.jpg"><i class="fa fa-eye fa-lg"></i></a>
+                    <h4>Przemysl, Tesco profugees centre</h4>
+                    <p>Photography</p>
+                </figcaption>
+            </figure>
+
+        </div>
+
+
+    </section>
+    <!--
+        statistic
+        ==================================== -->
+
+    <section id="facts" class="facts">
+        <div class="parallax-overlay">
+            <div class="container">
+                <div class="row number-counters">
+
+                    <div class="sec-title text-center mb50 wow rubberBand animated" data-wow-duration="1000ms">
+                        <h2>Facts</h2>
+                        <div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
+                    </div>
+
+                    <!-- first count item -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms">
+                        <div class="counters-item">
+                            <i class="fa fa-clock-o fa-3x"></i>
+                            <strong data-to="4569">0</strong>
+                            <p>Civilians Killed</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                        <div class="counters-item">
+                            <i class="fa fa-users fa-3x"></i>
+                            <strong data-to="10000">0</strong>
+                            <p>Ukrainian Forces Killed</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                        <div class="counters-item">
+                            <i class="fa fa-rocket fa-3x"></i>
+                            <strong data-to="3798">0</strong>
+                            <p> Russian Forces Killed </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="900ms">
+                        <div class="counters-item">
+                            <i class="fa fa-trophy fa-3x"></i>
+                            <strong data-to="3317000">0</strong>
+                            <p>Active NATO Allies</p>
+                        </div>
+                    </div>
+                    <!-- end first count item -->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+        End Some fun facts
+        ==================================== -->
+
+
+
+    <footer id="footer" class="footer">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copyright text-center">
+                        Copyright © 2022 Daniele Intra All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="javascript:void(0);" id="back-top"><i class="fa fa-angle-up fa-3x"></i></a>
+
+    <!-- Essential jQuery Plugins
+		================================================== -->
+    <!-- Main jQuery -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!-- Single Page Nav -->
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <!-- Twitter Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- jquery.fancybox.pack -->
+    <script src="js/jquery.fancybox.pack.js"></script>
+    <!-- jquery.mixitup.min -->
+    <script src="js/jquery.mixitup.min.js"></script>
+    <!-- jquery.parallax -->
+    <script src="js/jquery.parallax-1.1.3.js"></script>
+    <!-- jquery.countTo -->
+    <script src="js/jquery-countTo.js"></script>
+    <!-- jquery.appear -->
+    <script src="js/jquery.appear.js"></script>
+    <!-- Contact form validation -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+    <!-- Google Map -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+    <!-- jquery easing -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- jquery easing -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        var wow = new WOW({
+            boxClass: 'wow', // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 120, // distance to the element when triggering the animation (default is 0)
+            mobile: false, // trigger animations on mobile devices (default is true)
+            live: true // act on asynchronously loaded content (default is true)
+        });
+        wow.init();
+    </script>
+    <!-- Custom Functions -->
+    <script src="js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
+
+</body>
+
+</html>

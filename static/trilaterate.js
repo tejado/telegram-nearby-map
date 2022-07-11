@@ -28,7 +28,7 @@
  * @param {bool} return_middle If two solution found then return the center of them
  * @return {Object|Array|null} { x, y, z } or [ { x, y, z }, { x, y, z } ] or null
  */
-function trilaterate(p1, p2, p3, return_middle) {
+export function trilaterate(p1, p2, p3, return_middle) {
     // based on: https://en.wikipedia.org/wiki/Trilateration
 
     // some additional local functions declared here for
@@ -126,7 +126,7 @@ function trilaterate(p1, p2, p3, return_middle) {
     }
 }
 
-function toLonLat_epsg4978(point) {
+export function toLonLat_epsg4978(point) {
     let earthRadius = 6371;
     point.lon = Math.atan2(point.y, point.x) * (180 / Math.PI);
     point.lat = Math.asin(point.z / earthRadius / 1000) * (180 / Math.PI);
@@ -134,7 +134,7 @@ function toLonLat_epsg4978(point) {
     return point;
 }
 
-function fromLonLat_epsg4978(point) {
+export function fromLonLat_epsg4978(point) {
     let earthRadius = 6371;
 
     point.x =
@@ -148,6 +148,7 @@ function fromLonLat_epsg4978(point) {
     point.z = earthRadius * 1000 * Math.sin(point.lat * (Math.PI / 180));
 
     return point;
+
 }
 
-module.exports = { trilaterate, toLonLat_epsg4978, fromLonLat_epsg4978 };
+//module.exports = { trilaterate, toLonLat_epsg4978, fromLonLat_epsg4978 };
