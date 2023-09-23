@@ -307,7 +307,7 @@ $('#btn_reset').click(function () {
     source.clear();
 });
 
-$('#txt_searchDistance').change(function () {
+$('#txt_gap').change(function () {
     let newSearchDistance = parseInt($(this).val());
     console.log(`Changed search distance value to ${newSearchDistance}`);
 
