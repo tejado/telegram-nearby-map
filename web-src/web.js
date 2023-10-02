@@ -260,6 +260,9 @@ function refreshNearby(coordinates, nearbyUsers) {
                 <div><a href="#"><span class="w-48 avatar gd-primary"><img src="${user.photo}" alt="."></span></a>
                 </div>
                 <div class="flex user-info"><a href="#" class="item-author text-color">${user.name}</a>
+                    <br>
+                        ${user.userId}
+                    <br>
                     <div class="item-except text-sm h-1x">#${user.relId} - 
                     Distances: <span class="badge badge-primary badge-pill">${user.distances.length}</span> 
                     Locations: <span class="badge badge-primary badge-pill">${user.locations.length}</span></div>
