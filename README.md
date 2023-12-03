@@ -1,7 +1,7 @@
-# Loconos Project
+## Loconos Project
 
-    Abusa da função "Pessoas Próximas" do Telegram para triangular a posição aproximada dos usuários com essa função. O a ideia de triangulação de users tem sido amplamente utilizada pelo campo de Inteligência de Fontes Abertas (OSINT), e a automação do abuse junto à localização com OpenStreetMap desse projeto é um fork do projeto 'telegram-nearby-map', do git https://github.com/tejado;
-    O projeto consiste coletar os dados de Latitude e Longitude produzidas pela API do Telegram em diferentes posições, e calcular automaticamente a posição aproximadada dos usuários a partir de três ou mais ocorrências (triangulaçao geográfica). A cada 25 segundos segundos são recebidos os dados do TDLib (https://github.com/tdlib/td), que incluen a distância dos usuários próximas à minha localização (que é alterada usando a ideia de Fake GPS). 
+Abusa da função "Pessoas Próximas" do Telegram para triangular a posição aproximada dos usuários com essa função. O a ideia de triangulação de users tem sido amplamente utilizada pelo campo de Inteligência de Fontes Abertas (OSINT), e a automação do abuse junto à localização com OpenStreetMap desse projeto é um fork do projeto 'telegram-nearby-map', do git https://github.com/tejado;
+O projeto consiste coletar os dados de Latitude e Longitude produzidas pela API do Telegram em diferentes posições, e calcular automaticamente a posição aproximadada dos usuários a partir de três ou mais ocorrências (triangulaçao geográfica). A cada 25 segundos segundos são recebidos os dados do TDLib (https://github.com/tdlib/td), que incluen a distância dos usuários próximas à minha localização (que é alterada usando a ideia de Fake GPS). 
 
 
 ## Instalação
