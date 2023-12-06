@@ -9,9 +9,9 @@ O projeto consiste coletar os dados de Latitude e Longitude produzidas pela API 
 1. Cadastre uma API do Telegram usando as Ferramentas de Desenvolvedor do Telegram; somente um server é permitido por usuário de Telegram; [Link](https://my.telegram.org) 
 2. Salve o número da API e sua respectiva hash; 
 3. Instale o NODE.js no seu dispostivo; o node é utilizado para a interface web que será utilizada na integração dos dados TdLib e OpenstreetMap; [Link](https://nodejs.org/en/download)
-4. Edite o arquivo config.js para receber os seus dados da API;
-5. Clone o projeto [git clone https://github.com/podpoleguy/loconos/]
-6. Vá até a pasta do projeto, abra o terminal no diretório e instale todas depedências pelo comando 'npm install'
-7. Inicie a o server com 'npm start'
-8. O terminal solicitará a autenticação do seu usuário do Telegram. Digite o seu telefone, e autentique o usuário provendo o código de acesso.
-9. Abre o navegador e acesso o servidor web na porta 3000; http://localhost:3000
+4. Clone o projeto [git clone https://github.com/podpoleguy/loconos/]
+5. Edite o arquivo config.js para receber os seus dados da API;
+7. Vá até a pasta do projeto, abra o terminal no diretório e instale todas depedências pelo comando 'npm install'
+8. Inicie a o server com 'npm start'
+9. O terminal solicitará a autenticação do seu usuário do Telegram. Digite o seu telefone, e autentique o usuário provendo o código de acesso.
+10. Abre o navegador e acesso o servidor web na porta 3000; http://localhost:3000
